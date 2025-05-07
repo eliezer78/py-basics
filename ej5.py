@@ -1,3 +1,12 @@
+# #Crear una lista con números aleatorios y contar el número de repeticiones de cada número.
+# Imprimir un menu con las opciones: 
+# 1. Crear una nueva lista con número enteros aleatorios seleccionando la cantidad de numeros y entre 0 y cual hacerlo  
+# 2. Imprimir la lista creada, sino está creada mandar un mensaje de aviso 
+# 3. Mostrar las repeticiones de cada elemento 
+# 4. Mostrar los porcentajes de repeticion  
+# 5. Generar una lista nueva sin los elementos repetidos 
+# 6 Salir
+
 import random
 
 # Funciones para las diferentes operaciones del menú

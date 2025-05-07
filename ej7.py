@@ -1,3 +1,9 @@
+# Programa que realiza un algoritmo al estilo de bola 8, 
+# que genere 9 respuestas automaticas y aleatorias, usando una funcion.
+# El usuario puede hacer preguntas y el programa responderá con una de las respuestas predefinidas.
+# El programa termina cuando el usuario escribe "salir".
+# Se utiliza la librería random para generar respuestas aleatorias.
+
 import random
 
 def bola_8():

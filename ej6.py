@@ -1,3 +1,7 @@
+# Programa para sumar dos matrices de enteros de tamaño n x m
+# y mostrar el resultado en pantalla.
+# Se asume que las matrices son de enteros y del mismo tamaño.
+
 def sumar_mat(matriz1, matriz2):
     """    Suma dos matrices del mismo tamaño."""
 
