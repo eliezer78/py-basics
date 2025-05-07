@@ -1,61 +1,86 @@
 import random
 
-def generar_lista(cantidad):
-    """Generar una lista de números aleatorios."""
-    return [random.randint(1, 100) for _ in range(cantidad)]
+# Funciones para las diferentes operaciones del menú
+def crear_lista():
+    """Permite crear una nueva lista con números aleatorios."""
+    cantidad = int(input("¿Cuántos números aleatorios deseas generar? "))
+    max_num = int(input("¿Cuál será el número máximo (de 0 a este número)? "))
+    return [random.randint(0, max_num) for _ in range(cantidad)]
 
-def mostrar_lista(lista):
-    """Mostrar la lista generada."""
-    print("Lista generada:", lista)
+def imprimir_lista(lista):
+    """Imprime la lista creada."""
+    if lista is None:
+        print("No se ha creado ninguna lista aún.")
+    else:
+        print("Lista actual:", lista)
 
-def mostrar_mayor(lista):
-    """Mostrar el valor máximo de la lista."""
-    print("El mayor valor es:", max(lista))
+def contar_repeticiones(lista):
+    """Cuenta las repeticiones de cada número en la lista."""
+    if lista is None:
+        print("No se ha creado ninguna lista aún.")
+    else:
+        conteo = {}
+        for num in lista:
+            conteo[num] = conteo.get(num, 0) + 1
+        print("Repeticiones por número:", conteo)
+        return conteo
 
-def mostrar_menor(lista):
-    """Mostrar el valor mínimo de la lista."""
-    print("El menor valor es:", min(lista))
+def mostrar_porcentajes(lista, conteo):
+    """Muestra los porcentajes de repetición de cada número."""
+    if lista is None:
+        print("No se ha creado ninguna lista aún.")
+    elif conteo is None:
+        print("Primero debes contar las repeticiones.")
+    else:
+        total = len(lista)
+        porcentajes = {num: (count / total) * 100 for num, count in conteo.items()}
+        print("Porcentajes de repetición:")
+        for num, porcentaje in porcentajes.items():
+            print(f"El número {num} se repite un {porcentaje:.2f}%.")
 
-def calcular_suma(lista):
-    """Calcular y mostrar la suma de los elementos de la lista."""
-    print("La suma de los valores es:", sum(lista))
+def generar_lista_sin_repetidos(lista):
+    """Genera una nueva lista sin elementos repetidos."""
+    if lista is None:
+        print("No se ha creado ninguna lista aún.")
+    else:
+        lista_sin_repetidos = list(set(lista))
+        print("Nueva lista sin elementos repetidos:", lista_sin_repetidos)
 
-def calcular_promedio(lista):
-    """Calcular y mostrar el promedio de los elementos de la lista."""
-    promedio = sum(lista) / len(lista)
-    print("El promedio de los valores es:", promedio)
+# Programa principal
+def menu():
+    lista = None
+    conteo = None
 
-def menu_operaciones(lista):
-    """Menú interactivo para seleccionar operaciones con la lista."""
     while True:
+        # Imprimir menú
         print("\n--- Menú de Operaciones ---")
-        print("1. Mostrar la lista")
-        print("2. Mostrar el mayor de la lista")
-        print("3. Mostrar el menor de la lista")
-        print("4. Calcular la suma de los elementos")
-        print("5. Calcular el promedio de los elementos")
+        print("1. Crear una nueva lista con números aleatorios")
+        print("2. Imprimir la lista creada")
+        print("3. Mostrar las repeticiones de cada elemento")
+        print("4. Mostrar los porcentajes de repetición")
+        print("5. Generar una lista nueva sin los elementos repetidos")
         print("6. Salir")
-        
+
+        # Solicitar opción al usuario
         opcion = input("Selecciona una opción (1-6): ")
-        
+
         if opcion == '1':
-            mostrar_lista(lista)
+            lista = crear_lista()
+            conteo = None  # Reiniciar el conteo al generar una nueva lista
         elif opcion == '2':
-            mostrar_mayor(lista)
+            imprimir_lista(lista)
         elif opcion == '3':
-            mostrar_menor(lista)
+            conteo = contar_repeticiones(lista)
         elif opcion == '4':
-            calcular_suma(lista)
+            mostrar_porcentajes(lista, conteo)
         elif opcion == '5':
-            calcular_promedio(lista)
+            generar_lista_sin_repetidos(lista)
         elif opcion == '6':
             print("Saliendo del programa...")
             break
         else:
             print("Opción inválida. Intenta de nuevo.")
 
-# Programa principal
-if __name__ == "__main__": # Verifica si el archivo se está ejecutando como un programa principal
-    cantidad = int(input("Ingresa la cantidad de valores aleatorios que deseas generar: "))
-    lista = generar_lista(cantidad)
-    menu_operaciones(lista)
+# Ejecutar el programa
+if __name__ == "__main__":
+    menu()
