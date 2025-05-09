@@ -3,6 +3,7 @@
 # La matriz debe ser cargada por el usuario, quien ingresará los valores fila por fila.
 # Finalmente, se debe imprimir la matriz de forma legible.
 
+# Ingreso de medidas de la matriz
 filas = int(input("Ingrese el número de filas: "))
 columnas = int(input("Ingrese el número de columnas: "))    
 
