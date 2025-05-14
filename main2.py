@@ -1,2 +1,3 @@
-import main1    
-main1.saludar()
+from main1 import fibonacci as fibo
+
+fibo(10)
