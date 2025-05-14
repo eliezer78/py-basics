@@ -15,3 +15,4 @@ for i in lista:
 # Mostrar la lista y el diccionario en pantalla
 print("Lista:", lista)
 print("Diccionario de ocurrencias:", diccio)
+ 
