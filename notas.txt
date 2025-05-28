@@ -1,0 +1,4 @@
+PAblo,9
+Pedro,10
+Ana,6
+LAura,10
