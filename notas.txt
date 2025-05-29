@@ -1,4 +1,3 @@
-PAblo,9
-Pedro,10
-Ana,6
-LAura,10
+   Pedro Gomez  ,   10.3
+  Ana Rodriguez   ,    6.2
+    Laura Smith   ,      10.5
