@@ -1,20 +1,27 @@
-### Ejercicio 19: Herencia - Clase Producto
+### Ejercicio 19: Encapsulamiento - Clase Producto
 # 
-# Crea una clase llamada `Producto` para gestionar artículos en un sistema de inventario. 
-# Implementa los siguientes requisitos utilizando encapsulamiento:
-# 1. La clase debe tener los siguientes atributos **privados**:
+# Crea una clase llamada `Producto` para gestionar artículos 
+# en un sistema de inventario. 
+# Implementa los siguientes requisitos utilizando 
+# encapsulamiento:
+# 1. La clase debe tener los siguientes atributos privados:
 #   - `__nombre`
 #   - `__precio`
 #   - `__stock`
+#
 # 2. Implementa métodos públicos para:
 #   - Obtener el nombre, precio y stock del producto.
-#   - Modificar el precio y el stock. El precio no puede ser negativo; 
-#     si se intenta asignar un valor negativo, debe imprimirse un mensaje de error 
-#     y no cambiar el valor. El stock solo puede ser modificado a través de métodos 
-#     públicos `agregar_stock(cantidad)` y `vender(cantidad)`, que suman o restan la 
-#     cantidad indicada. No se puede vender más de lo que hay en stock; 
-#     en ese caso debe imprimirse un mensaje de error y no cambiar el stock.
-# 3. Implementa el método especial `__str__` para mostrar la información del producto
+#   - Modificar el precio y el stock. El precio no puede ser 
+#     negativo; si se intenta asignar un valor negativo, 
+#     debe imprimirse un mensaje de error y no cambiar el valor. 
+#     El stock solo puede ser modificado a través de métodos 
+#     públicos `agregar_stock(cantidad)` y `vender(cantidad)`, 
+#     que suman o restan la cantidad indicada. No se puede 
+#     vender más de lo que hay en stock; en ese caso debe 
+#     imprimirse un mensaje de error y no cambiar el stock.
+# 
+# 3. Implementa el método especial `__str__` para mostrar la información 
+#    del producto
 #    de forma legible.
 # 4. Escribe un pequeño programa de prueba que:
 #   - Cree dos productos distintos.
@@ -70,23 +77,23 @@ class Producto:
     def __str__(self):
         return f"Producto: {self.__nombre} | Precio: ${self.__precio:.2f} | Stock: {self.__stock}"
 
-if __name__ == "__main__":
-    producto1 = Producto("Laptop", 1200, 10)
-    producto2 = Producto("Mouse", 20, 50)
 
-    print(producto1)
-    print(producto2)
+producto1 = Producto("Laptop", 1200, 10)
+producto2 = Producto("Mouse", 20, 50)
 
-    # Modificando precio y stock
-    producto1.modificar_precio(1000)
-    producto1.agregar_stock(5)
-    producto1.vender(3)
-    print(producto1)
+print(producto1)
+print(producto2)
 
-    # Intentar asignar precio negativo
-    producto2.modificar_precio(-10)
+# Modificando precio y stock
+producto1.modificar_precio(1000)
+producto1.agregar_stock(5)
+producto1.vender(3)
+print(producto1)
 
-    # Intentar vender más stock del disponible
-    producto2.vender(100)
+# Intentar asignar precio negativo
+producto2.modificar_precio(-10)
 
-    print(producto2)
+# Intentar vender más stock del disponible
+producto2.vender(100)
+
+print(producto2)

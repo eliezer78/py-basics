@@ -1,19 +1,22 @@
-### Ejercicio 20: Herencia - Clase Usuario
+### Ejercicio 20: Encapsulamiento - Clase Usuario
 # 
 # Crea una clase llamada `Usuario` para gestionar usuarios en un sistema informático. 
 # Debes aplicar encapsulamiento de la siguiente forma:
-# 1. La clase debe tener los siguientes atributos **privados**:
+# 1. La clase debe tener los siguientes atributos privados:
 #   - `__nombre_usuario` (string)
 #   - `__clave` (string)
 #   - `__email` (string)
 #   - `__activo` (booleano, inicializa en `True`)
 # 2. Implementa métodos públicos para:
 #   - Obtener el nombre de usuario y el email.
-#   - Cambiar la clave del usuario solo si la clave nueva tiene al menos 8 caracteres; si no, debe imprimirse un mensaje de error y no cambiar la clave.
-#   - Cambiar el email. El nuevo email debe contener un `@` y un `.` (punto), en caso contrario debe imprimirse un mensaje de error y no modificar el email.
+#   - Cambiar la clave del usuario solo si la clave nueva tiene al menos 8 caracteres; si no, 
+#     debe imprimirse un mensaje de error y no cambiar la clave.
+#   - Cambiar el email. El nuevo email debe contener un `@` y un `.` (punto), 
+#     en caso contrario debe imprimirse un mensaje de error y no modificar el email.
 #   - Desactivar y reactivar la cuenta de usuario mediante los métodos `desactivar()` y `reactivar()`.  
 #   - Consultar si el usuario está activo (`es_activo()`).
-# 3. Implementa el método especial `__str__` para mostrar la información del usuario (nombre, email, estado activo/inactivo) de forma legible.
+# 3. Implementa el método especial `__str__` para mostrar la información del usuario 
+#    (nombre, email, estado activo/inactivo) de forma legible.
 # 4. Escribe un pequeño programa de prueba que:
 #   - Cree dos usuarios distintos.
 #   - Cambie la clave y el email usando los métodos públicos, probando casos válidos e inválidos.
@@ -61,23 +64,22 @@ class Usuario:
         estado = "Activo" if self.__activo else "Inactivo"
         return f"Usuario: {self.__nombre_usuario} | Email: {self.__email} | Estado: {estado}"
 
-# Programa de prueba
-if __name__ == "__main__":
-    usuario1 = Usuario("juanperez", "secreto123", "juan@correo.com")
-    usuario2 = Usuario("ana88", "clave4567", "ana@correo.com")
 
-    print(usuario1)
-    print(usuario2)
+usuario1 = Usuario("juanperez", "secreto123", "juan@correo.com")
+usuario2 = Usuario("ana88", "clave4567", "ana@correo.com")
 
-    usuario1.cambiar_clave("corto")    # Debe mostrar mensaje de error
-    usuario1.cambiar_clave("nuevaclave123")
-    usuario2.cambiar_email("anacorreo.com")  # Debe mostrar mensaje de error
-    usuario2.cambiar_email("ana@gmail.com")
+print(usuario1)
+print(usuario2)
 
-    usuario1.desactivar()
-    print(usuario1.es_activo())  # False
-    usuario1.reactivar()
-    print(usuario1.es_activo())  # True
+usuario1.cambiar_clave("corto")    # Debe mostrar mensaje de error
+usuario1.cambiar_clave("nuevaclave123")
+usuario2.cambiar_email("anacorreo.com")  # Debe mostrar mensaje de error
+usuario2.cambiar_email("ana@gmail.com")
 
-    print(usuario1)
-    print(usuario2)
+usuario1.desactivar()
+print(usuario1.es_activo())  # False
+usuario1.reactivar()
+print(usuario1.es_activo())  # True
+
+print(usuario1)
+print(usuario2)
