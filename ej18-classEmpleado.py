@@ -1,19 +1,22 @@
-### Ejercicio 17: Herencia - Clase Empleado
+### Ejercicio 18: Herencia - Clase Empleado
 #
-# Una empresa tiene diferentes tipos de empleados. Todos los empleados tienen un nombre, 
-# un identificador (ID) y un salario base.
+# Una empresa tiene diferentes tipos de empleados. Todos los empleados tienen 
+# un nombre, # un identificador (ID) y un salario base.
+#
 # Crea una clase base llamada Empleado que tenga:
 # Atributos: nombre, id, salario_base
 # Métodos: calcular_salario() que retorna el salario base.
 #          informacion() que imprime el nombre, ID y salario base.
 # 
-# Crea una clase derivada llamada EmpleadoTiempoCompleto que herede de Empleado y tenga:
+# Crea una clase derivada llamada EmpleadoTiempoCompleto que herede de Empleado 
+# y tenga:
 # Atributo adicional: bono_anual
 # Sobrescribe el método calcular_salario() para que retorne el salario base 
 # más el bono anual dividido entre 12 (bono mensual).
 # Sobrescribe el método informacion() para mostrar también el bono anual.
 # 
-# Crea otra clase derivada llamada EmpleadoMedioTiempo que herede de Empleado y tenga:
+# Crea otra clase derivada llamada EmpleadoMedioTiempo que herede de Empleado 
+# y tenga:
 # Atributo adicional: horas_trabajadas
 # Sobrescribe el método calcular_salario() para que retorne el salario base 
 # multiplicado por las horas trabajadas y dividido entre 80 
@@ -22,7 +25,6 @@
 # 
 # Crea una lista de empleados (de ambos tipos) y muestra la información 
 # y el salario calculado de cada uno.
-
 class Empleado:
     def __init__(self, nombre, id, salario_base):
         self.nombre = nombre
@@ -49,7 +51,7 @@ class EmpleadoTiempoCompleto(Empleado):
     def informacion(self):
         super().informacion()
         print(f"Bono anual: {self.bono_anual}")
-
+        
 class EmpleadoMedioTiempo(Empleado):
     def __init__(self, nombre, id, salario_base, horas_trabajadas):
         super().__init__(nombre, id, salario_base)
