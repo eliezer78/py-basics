@@ -1,4 +1,4 @@
-### Herencia múltiple
+### Herencia múltiple y encapsulamiento
 class Estudiante:
     def __init__(self,nombrecompleto,carrera,legajo):
         self.nombrecompleto = nombrecompleto 
@@ -34,6 +34,7 @@ print(estudiante.obtener_legajo())
 matleta = MathAtleta("Rodrigo De Paul","Sistemas",64238764,"Motorcito","Fútbol","Profesional",["lunes","miercoles","viernes"])
 print(matleta.mostrar_informacion())
 
+# Encapsulamiento
 """
 class CuentaBancaria:
     def __init__(self, cliente, tipo, saldo_inicial):
