@@ -77,4 +77,5 @@ vehiculos = [
     Motocicleta("Honda", "PCX 150", 3500, "Scooter")
 ]
 
+# vehiculo = Vehiculo()  # Esto es solo para ilustrar que Vehiculo es abstracta y no se puede instanciar
 imprimir_reporte(vehiculos)
