@@ -14,20 +14,20 @@ class Vector:
 
     # Suma de dos vectores usando el operador +
     def __add__(self, other):
-        if not isinstance(other, Vector):
-            return NotImplemented
+        # if not isinstance(other, Vector):
+        #    return NotImplemented
         return Vector(self.x + other.x, self.y + other.y)
 
     # Resta de dos vectores usando el operador -
     def __sub__(self, other):
-        if not isinstance(other, Vector):
-            return NotImplemented
+        # if not isinstance(other, Vector):
+        #    return NotImplemented
         return Vector(self.x - other.x, self.y - other.y)
 
     # Multiplicación escalar usando el operador *
     def __mul__(self, scalar):
-        if not isinstance(scalar, (int, float)):
-            return NotImplemented
+        # if not isinstance(scalar, (int, float)):
+        #    return NotImplemented
         return Vector(self.x * scalar, self.y * scalar)
 
     # Devuelve la magnitud del vector usando abs(v)
@@ -63,7 +63,7 @@ class Vector:
 v1 = Vector(2, 3)
 v2 = Vector(1, 1)
 
-print("Str:", str(v1))                         # __str__
+print("Str:", v1)                              # __str__
 print("Suma:", v1 + v2)                        # __add__
 print("Resta:", v1 - v2)                       # __sub__
 print("Multiplicación escalar:", v1 * 3)       # __mul__

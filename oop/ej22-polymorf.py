@@ -1,7 +1,7 @@
-### Ejercicio 22: Polimorfismo - Clases Vehículo, Auto y Motocicleta
+### Ejercicio 22: Polimorfismo - Clases Vehículo, Auto y Moto
 #
 # Imagina que estás desarrollando un sistema para una tienda de vehículos. 
-# La tienda vende autos y motocicletas. Cada tipo de vehículo debe poder 
+# La tienda vende autos y motos. Cada tipo de vehículo debe poder 
 # mostrar su propia información y calcular el impuesto de venta de manera diferente.
 # Utilizando el concepto de polimorfismo, crea un sistema que permita manejar
 # diferentes tipos de vehículos de forma uniforme.
@@ -12,15 +12,15 @@
 #
 # 2. Crea dos clases derivadas:
 #    - `Auto`: debe tener atributos como marca, modelo, precio y número de puertas.
-#    - `Motocicleta`: debe tener atributos como marca, modelo, precio y tipo 
+#    - `Moto`: debe tener atributos como marca, modelo, precio y tipo 
 #      (deportiva, scooter, etc.).
 #
 # 3. Implementa los métodos `mostrar_info()` y `calcular_impuesto()` en cada clase derivada:
 #    - Para `Auto`, el impuesto es el 10% del precio.
-#    - Para `Motocicleta`, el impuesto es el 6% del precio.
+#    - Para `Moto`, el impuesto es el 6% del precio.
 #
-# 4. Escribe una función llamada `imprimir_reporte(vehiculos: list)` que reciba una lista de 
-#    vehículos y, utilizando polimorfismo, imprima la información y el impuesto de cada uno.
+# 4. Imprimir una lista de vehículos y, utilizando polimorfismo, 
+#    imprimir la información y el impuesto de cada uno.
 
 from abc import ABC, abstractmethod
 

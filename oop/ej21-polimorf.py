@@ -8,7 +8,9 @@
 #    - 'Circulo' debe tener un atributo 'radio'.
 #    - 'Rectangulo' debe tener atributos 'base' y 'altura'.
 # 3. Implementa el método 'calcular_area()' en cada subclase para calcular el área apropiada.
-# 4. Escribe una función 'mostrar_areas(figuras)' que reciba una lista de figuras y, usando polimorfismo, imprima el área de cada una.
+# 4. Escribe una función 'mostrar_areas(figuras)' que reciba una lista de figuras y, 
+#    usando polimorfismo, imprima el área de cada una.
+
 
 from abc import ABC, abstractmethod
 import math
@@ -39,20 +41,15 @@ class Rectangulo(Figura):
         """Calcula el área de un rectángulo"""
         return self.base * self.altura
 
-def mostrar_areas(figuras):
-    """Imprime el área de cada figura en la lista"""
-    print("=== Áreas de las Figuras ===")
-    for figura in figuras:
-        area = figura.calcular_area()  # Polimorfismo: cada objeto responde a su propia versión de calcular_area
-        print(f"El área de la figura es: {area:.2f}")
-
-# Ejemplo de uso:
-if __name__ == "__main__":
-    figuras = [
+figuras = [
         Circulo(5),           
         Rectangulo(4, 6),     
         Circulo(2.5),         
-        Rectangulo(3, 8)      
+        Rectangulo(3, 8),
+        Circulo(3)      
     ]
 
-    mostrar_areas(figuras)
+print("=== Áreas de las Figuras ===")
+for figura in figuras:
+        area = figura.calcular_area()  # Polimorfismo: cada objeto responde a su propia versión de calcular_area
+        print(f"El área de la figura es: {area:.2f}")
