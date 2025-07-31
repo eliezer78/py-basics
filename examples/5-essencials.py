@@ -2,7 +2,7 @@ class Matematica:
     # Atributo estático de clase: compartido por todas las instancias
     contador = 0
         
-    # Método normal (de instancia): recibe self y puede usar atributos de la instancia
+    # Método de instancia: recibe self y puede usar atributos de la instancia
     def sumar(self, a, b):
         print("Método de instancia")
         return a + b
@@ -20,15 +20,15 @@ class Matematica:
         return a * b
 
 # Demostración de uso
-m = Matematica()
+mate = Matematica()
 
 # Método de instancia: se accede desde una instancia, recibe self
-print(m.sumar(3, 2))        # Salida: 5
+print(mate.sumar(3, 2))        # Salida: 5
 
 # Método de clase: se puede acceder desde la clase o la instancia, recibe cls
 print(Matematica.restar(5, 3))  # Salida: 2
-print(m.restar(7, 2))           # Salida: 5
+print(mate.restar(7, 2))        # Salida: 5
 
 # Método estático: se puede acceder desde la clase o la instancia, sin self ni cls
 print(Matematica.multiplicar(4, 6))  # Salida: 24
-print(m.multiplicar(2, 8))           # Salida: 16
+print(mate.multiplicar(2, 8))           # Salida: 16

@@ -62,14 +62,6 @@ class Motocicleta(Vehiculo):
     def calcular_impuesto(self):
         return self.precio * 0.06
 
-def imprimir_reporte(vehiculos):
-    """Imprime el reporte de vehículos"""
-    print("=== REPORTE DE VEHÍCULOS ===")
-    for v in vehiculos:
-        v.mostrar_info()
-        impuesto = v.calcular_impuesto()
-        print(f"Impuesto de venta: ${impuesto:.2f}\n")
-
 vehiculos = [
     Auto("Toyota", "Corolla", 15000, 4),
     Motocicleta("Yamaha", "MT-03", 6000, "Deportiva"),
@@ -77,5 +69,8 @@ vehiculos = [
     Motocicleta("Honda", "PCX 150", 3500, "Scooter")
 ]
 
-# vehiculo = Vehiculo()  # Esto es solo para ilustrar que Vehiculo es abstracta y no se puede instanciar
-imprimir_reporte(vehiculos)
+print("=== REPORTE DE VEHÍCULOS ===")
+for v in vehiculos:
+    v.mostrar_info()
+    impuesto = v.calcular_impuesto()
+    print(f"Impuesto de venta: ${impuesto:.2f}\n") 
