@@ -2,15 +2,15 @@
 # son funciones anonimas que se usan para   
 # operaciones simples y de una sola linea
 # se definen con la palabra lambda
-# lambda argumentos: expresion
+# la sintaxis es: lambda argumentos: expresion
 
-sum_two_values = lambda a,b:a+b
-print(sum_two_values(7,8))
+sumar_dos_valores = lambda a, b: a + b
+print(sumar_dos_valores(7,8))
 
-def sum_three(c):
-    return lambda a,b: a+b+c
+def sumar_tres(c):
+    return lambda a, b: a + b + c
 
-print(sum_three(4)(8,9))
+print(sumar_tres(4)(8,9))
 
 is_palindrome = lambda s: s == s[::-1]
 print(is_palindrome("radar"))
@@ -34,13 +34,13 @@ def suma_uno(x):
 def suma_dos(x):
     return x + 2
 
-def suma_dos_valores_mas_otro(a,b,f_sum):
-    return f_sum(a + b)
+def suma_dos_valores_mas_otro(a, b, f_suma):
+    return f_suma(a + b)
     
 print(suma_dos_valores_mas_otro(2,3,suma_uno))
 print(suma_dos_valores_mas_otro(2,3,suma_dos))
 
-### clousures
+### closures
 # son funciones que retornan otras funciones
 # estas funciones retornadas recuerdan el entorno
 # en el que fueron creadas
@@ -54,6 +54,20 @@ suma = suma_diez(1)
 print(suma(2))
 
 print(suma_diez(1)(5))
+
+# Funcion externa crear_saludo
+def crear_saludo(saludo):
+    # Función interna saludar: closure
+    def saludar(nombre):
+        return f"{saludo}, {nombre}"
+    return saludar
+
+buenas = crear_saludo("Buenas tardes")
+hola = crear_saludo("Hola")
+
+print(buenas("Diego"))
+print(hola("Ana"))
+
 
 ### Built-in high order functions
 # son funciones que ya vienen integradas en python
@@ -74,3 +88,13 @@ from functools import reduce
 print(reduce(lambda a,b: a + b, lista))
 print(reduce(lambda a,b: a if a > b else b, lista))
 
+# zip
+lista2 = ['a','b','c','d','e','f']
+print(list(zip(lista2, lista)))
+
+# enumerate
+print(list(enumerate(lista)))
+
+# sorted
+print(sorted(lista, reverse=True))  # ordena de mayor a menor
+print(sorted(lista, key=lambda x: x % 2))  # ordena por paridad

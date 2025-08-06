@@ -47,12 +47,11 @@ class Vector:
         print(f"Vector en ({self.x}, {self.y})")
 
     # Permite evaluar el vector en un contexto booleano (if v:)
-    def __bool__(self):
-        return self.x != 0 or self.y != 0
+    # def __bool__(self):
+    #    return self.x != 0 or self.y != 0
 
     # Permite copiar el vector usando copy.copy(v)
     def __copy__(self):
-        import copy
         return Vector(self.x, self.y)
 
     # Método llamado cuando el objeto es destruido (al eliminarlo)
@@ -70,7 +69,7 @@ print("Multiplicación escalar:", v1 * 3)       # __mul__
 print("Módulo:", abs(v1))                      # __abs__
 print("Longitud:", len(v1))                    # __len__
 v1()                                           # __call__
-print("¿Es verdadero?", bool(v1))              # __bool__
+# print("¿Es verdadero?", bool(v1))              # __bool__
 
 import copy
 v3 = copy.copy(v1)                             # __copy__
