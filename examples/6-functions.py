@@ -1,4 +1,31 @@
-### lambdas
+### High order functions
+# son funciones que reciben otras funciones como argumentos
+# o que retornan funciones como resultado
+
+def suma_uno(x):
+    return x + 1
+
+def multiplica_dos(x):
+    return x * 2
+
+def suma_nros_mas_otro(a, b, f):
+    return f(a + b)
+
+print(suma_nros_mas_otro(3, 4, suma_uno))
+print(suma_nros_mas_otro(5, 6, multiplica_dos))
+
+
+
+"""
+def suma_dos_valores_mas_otro(a, b, f_suma):
+    return f_suma(a + b)
+    
+print(suma_dos_valores_mas_otro(2,3,suma_uno))
+print(suma_dos_valores_mas_otro(2,3,suma_dos))
+"""
+
+
+"""### lambdas
 # son funciones anonimas que se usan para   
 # operaciones simples y de una sola linea
 # se definen con la palabra lambda
@@ -98,3 +125,4 @@ print(list(enumerate(lista)))
 # sorted
 print(sorted(lista, reverse=True))  # ordena de mayor a menor
 print(sorted(lista, key=lambda x: x % 2))  # ordena por paridad
+"""

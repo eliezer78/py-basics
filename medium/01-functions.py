@@ -63,7 +63,6 @@ print(reduce(lambda x, y: x * y,numeros))
 # Crea una clase `Libro` con atributos `titulo` y `autor`. 
 # Redefine el método `__str__` para que al imprimir un objeto 
 # muestre: `"Titulo - Autor"`.
-
 class Libro:
     def __init__(self, titulo, autor):
         self.titulo = titulo
