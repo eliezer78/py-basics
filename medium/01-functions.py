@@ -132,10 +132,10 @@ def contador():
         return cuenta
     return siguiente
 
-c = contador()
-print(c())
-print(c())
-print(c())
+mi_contador = contador()
+print(mi_contador())
+print(mi_contador())
+print(mi_contador())
 
 ### Ejercicio 12: Validador de rango
 # Crea una función que reciba dos valores `min` y `max` y retorne una 

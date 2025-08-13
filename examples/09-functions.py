@@ -97,7 +97,7 @@ print(reduce(lambda a,b: a if a > b else b, lista))
 
 # zip
 print("\n*** zip ***")
-lista2 = ['a','b','c','d','e','f']
+lista2 = ['a','b','c','d','e']
 print(list(zip(lista2, lista)))
 
 # enumerate
