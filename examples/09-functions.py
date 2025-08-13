@@ -1,31 +1,5 @@
-### High order functions
-# son funciones que reciben otras funciones como argumentos
-# o que retornan funciones como resultado
-
-def suma_uno(x):
-    return x + 1
-
-def multiplica_dos(x):
-    return x * 2
-
-def suma_nros_mas_otro(a, b, f):
-    return f(a + b)
-
-print(suma_nros_mas_otro(3, 4, suma_uno))
-print(suma_nros_mas_otro(5, 6, multiplica_dos))
-
-
-
 """
-def suma_dos_valores_mas_otro(a, b, f_suma):
-    return f_suma(a + b)
-    
-print(suma_dos_valores_mas_otro(2,3,suma_uno))
-print(suma_dos_valores_mas_otro(2,3,suma_dos))
-"""
-
-
-"""### lambdas
+### lambdas
 # son funciones anonimas que se usan para   
 # operaciones simples y de una sola linea
 # se definen con la palabra lambda
@@ -66,11 +40,14 @@ def suma_dos_valores_mas_otro(a, b, f_suma):
     
 print(suma_dos_valores_mas_otro(2,3,suma_uno))
 print(suma_dos_valores_mas_otro(2,3,suma_dos))
+"""
 
 ### closures
 # son funciones que retornan otras funciones
 # estas funciones retornadas recuerdan el entorno
 # en el que fueron creadas
+
+print("\n*** closures ***")
 
 def suma_diez(y):
     def suma(x):
@@ -105,24 +82,29 @@ print(hola("Ana"))
 lista =[2,51,9,7,1,26,15,4]
 
 # map
+print("\n*** map ***")
 print(list(map(lambda x: x ** 2, lista)))
 
 # filter
+print("\n*** filter ***")
 print(list(filter(lambda x: x % 2 == 0, lista)))
 
 # reduce
 from functools import reduce
+print("\n*** reduce ***")
 print(reduce(lambda a,b: a + b, lista))
 print(reduce(lambda a,b: a if a > b else b, lista))
 
 # zip
+print("\n*** zip ***")
 lista2 = ['a','b','c','d','e','f']
 print(list(zip(lista2, lista)))
 
 # enumerate
+print("\n*** enumerate ***")
 print(list(enumerate(lista)))
 
 # sorted
+print("\n*** sorted ***")
 print(sorted(lista, reverse=True))  # ordena de mayor a menor
 print(sorted(lista, key=lambda x: x % 2))  # ordena por paridad
-"""
