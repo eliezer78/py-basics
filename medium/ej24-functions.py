@@ -1,7 +1,5 @@
 # Funciones Lambda, Orden Superior, Dunder y Closures en Python
 
-## 1. Funciones Lambda
-
 ### Ejercicio 1: Suma rápida
 # Escribe una función lambda que reciba dos números y devuelva su suma.
 
@@ -12,18 +10,15 @@ print(suma(6,7))
 # Dada una lista de números, usa `filter` y una función lambda 
 # para obtener una lista solo con los múltiplos de 4.
 
-numeros = [1, 4, 6, 8, 9, 12, 15]
-print(list(filter(lambda x: x % 4==0,numeros)))
+lista = [2,5,8,12,15,40]
+print(list(filter(lambda x: x % 4 == 0,lista)))
 
 ### Ejercicio 3: Transformación de cadenas
 # Usa `map` y una función lambda para convertir todas las palabras 
 # de una lista de strings a mayúsculas.
 
-lista = ["python","typescript","cobol"]
-print(list(map(lambda palabra: palabra.upper(),lista)))
-
-
-## 2. Funciones de Orden Superior
+palabras = ['leandro','miguel','MILTon','Kevin']
+print(list(map(lambda s: s.upper(), palabras)))
 
 ### Ejercicio 4: Aplica una función
 # Escribe una función que reciba otra función y un número, 
@@ -33,7 +28,6 @@ def aplicar_func(func, nro):
     return func(nro)
 
 print(aplicar_func(lambda x: x ** 0.5, 36))
-
 
 ### Ejercicio 5: Función de composición
 # Implementa una función que reciba dos funciones y devuelva 
@@ -48,16 +42,11 @@ comp = compuesta(cuadrado,suma_uno)
 print(comp(2))
 
 ### Ejercicio 6: Reducción personalizada
-# Usa `reduce` para multiplicar todos los elementos de una lista de números.
+# Usa `reduce` para multiplicar todos los elementos 
+# de una lista de números.
 
 from functools import reduce
-
-numeros = [2,3,4,5]
-
-print(reduce(lambda x, y: x * y,numeros))
-
-
-## 3. Funciones Dunder
+print(reduce(lambda x,y: x * y, lista))
 
 ### Ejercicio 7: Clase con `__str__`
 # Crea una clase `Libro` con atributos `titulo` y `autor`. 
@@ -104,20 +93,16 @@ print(punto3)
 # Modifica la clase `Punto` para que puedas sumar dos puntos 
 # usando el operador `+` (sobrecarga de `__add__`).
 
-
-## 4. Closures
-
 ### Ejercicio 10: Multiplicador
 # Escribe una función que reciba un número y retorne 
 # una función que multiplica cualquier valor por ese número (closure).
+def recibe_nro(x):
+    def multiplica(y):
+        return x * y
+    return multiplica
 
-def multiplica(x):
-    def func(n):
-        return x * n
-    return func
-
-doble = multiplica(2)
-print(doble(10))
+mult = recibe_nro(5)
+print(mult(7))
 
 ### Ejercicio 11: Contador
 # Escribe una función que retorne una función que, 
@@ -125,17 +110,23 @@ print(doble(10))
 # empieza en 1 y aumenta en uno.
 
 def contador():
-    cuenta = 0
-    def siguiente():
-        nonlocal cuenta 
-        cuenta += 1
-        return cuenta
-    return siguiente
+    cont = 0
+    def sumar():
+        nonlocal cont
+        cont += 1
+        return cont
+    return sumar
 
-mi_contador = contador()
-print(mi_contador())
-print(mi_contador())
-print(mi_contador())
+contar = contador()
+print(contar())
+print(contar())
+print(contar())
+
+numeros = [1, 4, 6, 8, 9, 12, 15]
+print(list(filter(lambda x: x % 4==0,numeros)))
+
+lista = ["python","typescript","cobol"]
+print(list(map(lambda palabra: palabra.upper(),lista)))
 
 ### Ejercicio 12: Validador de rango
 # Crea una función que reciba dos valores `min` y `max` y retorne una 

@@ -39,7 +39,6 @@
 #   por ejemplo, para filtrar o para la clave de ordenamiento.
 # - Un closure es una función interna que recuerda el contexto donde fue creada 
 #   (por ejemplo, la cuenta a la que debe aplicar el interés).
-
 class Cuenta:
     _contador_id = 1
 
@@ -113,3 +112,4 @@ print(banco.cuentas[0] == banco.cuentas[1])  # False
 interes_5 = banco.generar_aplicador_interes("Ana", 0.05)
 interes_5()
 print(banco.cuentas[0])  # Mostrar cuenta de Ana con el nuevo saldo
+"""

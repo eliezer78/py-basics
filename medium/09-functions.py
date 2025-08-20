@@ -1,4 +1,3 @@
-"""
 ### lambdas
 # son funciones anonimas que se usan para   
 # operaciones simples y de una sola linea
@@ -40,7 +39,7 @@ def suma_dos_valores_mas_otro(a, b, f_suma):
     
 print(suma_dos_valores_mas_otro(2,3,suma_uno))
 print(suma_dos_valores_mas_otro(2,3,suma_dos))
-"""
+
 
 ### closures
 # son funciones que retornan otras funciones
@@ -49,15 +48,15 @@ print(suma_dos_valores_mas_otro(2,3,suma_dos))
 
 print("\n*** closures ***")
 
-def suma_diez(y):
-    def suma(x):
-        return x + 10 + y
+def suma_diez(y): # funcion externa
+    def suma(x):  # funcion interna o closure
+        return y + x + 10
     return suma
 
-suma = suma_diez(1)
-print(suma(2))
+sum = suma_diez(3)
+print(sum(2))
 
-print(suma_diez(1)(5))
+print(suma_diez(6)(7))
 
 # Funcion externa crear_saludo
 def crear_saludo(saludo):
@@ -66,12 +65,10 @@ def crear_saludo(saludo):
         return f"{saludo}, {nombre}"
     return saludar
 
-buenas = crear_saludo("Buenas tardes")
-hola = crear_saludo("Hola")
-
-print(buenas("Diego"))
-print(hola("Ana"))
-
+saludo1 = crear_saludo("Buenas!")
+saludo2 = crear_saludo("Hola!")
+print(saludo1("Milton"))
+print(saludo2("Leandro"))
 
 ### Built-in high order functions
 # son funciones que ya vienen integradas en python
@@ -79,7 +76,7 @@ print(hola("Ana"))
 # algunas de las mas comunes son:
 # map, filter, reduce, zip, enumerate, sorted, etc
 
-lista =[2,51,9,7,1,26,15,4]
+lista =[2,40,9,6,1,26,3,15,8]
 
 # map
 print("\n*** map ***")
