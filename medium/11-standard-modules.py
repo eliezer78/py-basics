@@ -1,99 +1,47 @@
-### Python Standard Library
+### PYTHON STANDARD LIBRARY
 
 # math, datetime, random, textwrap, 
 # array, sys, os, json, re, statistics
 
-import math
+from math import sqrt, pi, sin, log, factorial, gcd
 
-print(math.sqrt(16))
-print(math.pi)
-print(math.sin(math.pi / 2))
-print(math.log(100, 10))
-print(math.factorial(5))
-print(math.gcd(48, 180))
+print(sqrt(16))
+print(pi)
+print(sin(pi / 2))
+print(log(100, 10))
+print(factorial(5))
+print(gcd(48, 180, 456))
 
-import datetime
+from datetime import datetime, timedelta
 
-now = datetime.datetime.now()
+now = datetime.now()
 print("Fecha y hora actual:", now)
 print("Año:", now.year)
 print("Mes:", now.month)
 print("Día:", now.day)
-print("Dentro de 5 días:", now + datetime.timedelta(days=5))
+print("Dentro de 5 días:", now + timedelta(days=5))
 
 import random
 
 rdm = random.randint(1, 100)
 print("Número aleatorio:", rdm)
 
-import array
 
-a = array.array('i', [1, 2, 3, 4, 5])
+from array import array
+
+a = array('i', [1, 2, 3, 4, 5])
+m = array('u', ["a","b","c"])
 print(sum(a))
-print(a[1:4])
+print(a[1:2])
 
+import textwrap
 
+doc = "La Biblioteca Estándar de Python (Python Standard Library, o PSL) es una extensa colección de módulos y paquetes que vienen incluidos con la instalación de Python. Es una de las características más importantes del lenguaje, ya que provee una gran cantidad de funcionalidades listas para usar sin necesidad de instalar nada adicional."
 
-"""
-import numpy as np
+print(textwrap.fill(doc, width=80))
 
-array = np.array([1, 2, 3])
+import os
 
-print(array * 2)
-
-import numpy as np
-
-# Crear un array a partir de una lista
-a = np.array([1, 2, 3, 4, 5])
-print("Array:", a)
-
-# Crear una matriz 2D
-b = np.array([[1, 2, 3], [4, 5, 6]])
-print("Matriz:\n", b)
-
-x = np.array([1, 2, 3])
-y = np.array([10, 20, 30])
-
-print(x + y)   # suma elemento a elemento
-print(x * y)   # multiplicación elemento a elemento
-print(x ** 2)  # potencia
-
-data = np.array([10, 20, 30, 40, 50])
-
-print("Media:", np.mean(data))
-print("Mediana:", np.median(data))
-print("Desviación estándar:", np.std(data))
-
-
-
-import pandas as pd
-
-# Crear un DataFrame (tabla)
-data = {
-    "Nombre": ["Ana", "Luis", "Carla"],
-    "Edad": [23, 34, 29],
-    "Ciudad": ["Madrid", "Buenos Aires", "México DF"]
-}
-
-df = pd.DataFrame(data)
-
-print(df)
-
-# Seleccionar columna
-# print(df["Nombre"])
-
-# Filtrar filas (edad mayor a 25)
-# print(df[df["Edad"] > 25])
-
-import requests
-
-response = requests.get("https://api.chucknorris.io/jokes/random")
-data = response.json()
-print("Chiste:", data["value"])
-
-
-from mypackage import maths
-
-sum_result = maths.sum_two_values(5, 7)
-print("Suma:", sum_result)
-"""
+print("Directorio actual:", os.getcwd())
+print("Archivos en el directorio:", os.listdir('.'))
+print("Ruta absoluta del script:", os.path.abspath(__file__))

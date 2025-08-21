@@ -1,22 +1,25 @@
-def scope_test():
+def funcion_externa():
     def do_local():
-        spam = "local spam"
+        var = "local variable"
+        print("Asignacion local:", var)
 
     def do_nonlocal():
-        nonlocal spam
-        spam = "nonlocal spam"
+        nonlocal var
+        var = "nonlocal variable"
 
     def do_global():
-        global spam
-        spam = "global spam"
-
-    spam = "test spam"
+        global var
+        var = "global var"
+    
+    var = "var de la funcion externa"
     do_local()
-    print("After local assignment:", spam)
+    print("After local assignment:", var)
+    
     do_nonlocal()
-    print("After nonlocal assignment:", spam)
+    print("After nonlocal assignment:", var)
+    
     do_global()
-    print("After global assignment:", spam)
+    print("After global assignment:", var)
 
-scope_test()
-print("In global scope:", spam)
+funcion_externa()
+print("In global scope:", var)
