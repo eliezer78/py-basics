@@ -14,25 +14,53 @@
 # PERSONA de tu lenguaje los datos almacenados en el XML y el JSON.
 
 import json
+class Persona:
+    def __init__(self, nombre, edad, rol, lenguajes):
+        self.nombre = nombre
+        self.edad = edad
+        self.rol = rol
+        self.lenguajes = lenguajes
 
-datos = {
-    "nombre": "Lionel Messi",
-    "edad": 37,
-    "nacimiento": "1987-06-24",
-    "lenguajes": ["Python", "JavaScript", "C++"]
-}
+    def __str__(self):
+        return (f"Nombre: {self.nombre}, Edad: {self.edad}, "
+                f"Rol: {self.rol}, "
+                f"Lenguajes: {'/'.join(self.lenguajes)}")
+        
+persona1 = Persona("Diego", 25, "Desarrollador",["python","javascript","C++"])
+
+datos = {"nombre" : persona1.nombre, 
+         "edad":persona1.edad,
+         "rol":persona1.rol,
+         "lenguajes":persona1.lenguajes}
 
 # Crear JSON
 json_file = "persona.json"
-
 with open(json_file, "w", encoding="utf-8") as f:
     json.dump(datos, f, indent=4, ensure_ascii=False)
+
 
 # Mostrar contenido JSON
 print("Contenido JSON:")
 with open(json_file, "r", encoding="utf-8") as f:
     print(f.read())
 
+
+# Leer JSON y crear objeto Persona
+json_file = "persona.json"
+
+with open(json_file, "r", encoding="utf-8") as f:
+    datos_json = json.load(f)
+
+persona_json = Persona(
+    datos_json["nombre"],
+    datos_json["edad"],
+    datos_json["rol"],
+    datos_json["lenguajes"]
+)
+
+print(persona_json)
+
+"""
 import xml.etree.ElementTree as ET
 
 # Crear XML
@@ -57,56 +85,4 @@ import os
 # os.remove(json_file)
 # os.remove(xml_file)
 # print("\nArchivos borrados.")
-
-# lenguajes_el = ET.SubElement(root, "lenguajes")
-# for lang in datos["lenguajes"]:
-#    ET.SubElement(lenguajes_el, "lenguaje").text = lang
-
-
-
-
-
-# class Persona:
-#    def __init__(self, nombre, edad, nacimiento, lenguajes):
-#        self.nombre = nombre
-#        self.edad = edad
-#        self.nacimiento = nacimiento
-#        self.lenguajes = lenguajes
-#    def __str__(self):
-#        return (f"Nombre: {self.nombre}, Edad: {self.edad}, "
-#                f"Nacimiento: {self.nacimiento}, "
-#                f"Lenguajes: {', '.join(self.lenguajes)}")
-
-
-
-
-
-# Leer JSON y crear objeto Persona
-# with open(json_filename, "r", encoding="utf-8") as f:
-#    datos_json = json.load(f)
-# persona_json = Persona(
-#    datos_json["nombre"],
-#    datos_json["edad"],
-#    datos_json["nacimiento"],
-#    datos_json["lenguajes"]
-# )
-
-# Leer XML y crear objeto Persona
-# tree = ET.parse(xml_filename)
-# root = tree.getroot()
-
-# nombre = root.find("nombre").text
-# edad = int(root.find("edad").text)
-# nacimiento = root.find("nacimiento").text
-# lenguajes = [l.text for l in root.find("lenguajes").findall("lenguaje")]
-
-# persona_xml = Persona(nombre, edad, nacimiento, lenguajes)
-
-# print("\nPersona cargada desde JSON:")
-# print(persona_json)
-
-# print("\nPersona cargada desde XML:")
-# print(persona_xml)
-
-import os
-
+"""
