@@ -1,30 +1,12 @@
 # Ejemplo de manejo de excepciones en Python
 # Este programa solicita al usuario que ingrese un número y maneja la excepción
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
 with open("notas.txt", "r", encoding="utf-8") as f:
     for linea in f:
         if not linea:
             continue
         print(linea.strip())
-"""
-"""
+
 # while True:
 try:
     num = float(input("Ingrese un número:"))
@@ -42,7 +24,7 @@ except Exception as e:
     #break
 finally:
     print("Fin del bloque finally.")
-"""     
+
 
 # Ejemplo de manejo de excepciones en Python
 # Este programa intenta abrir un archivo y leer un número entero de él.
