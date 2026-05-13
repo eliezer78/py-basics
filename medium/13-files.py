@@ -29,9 +29,9 @@ class Persona:
 persona1 = Persona("Diego", 25, "Desarrollador",["python","javascript","C++"])
 
 datos = {"nombre" : persona1.nombre, 
-         "edad":persona1.edad,
-         "rol":persona1.rol,
-         "lenguajes":persona1.lenguajes}
+        "edad":persona1.edad,
+        "rol":persona1.rol,
+        "lenguajes":persona1.lenguajes}
 
 # Crear JSON
 json_file = "persona.json"

@@ -1,53 +1,65 @@
-### Clases y Objetos
+### Clases y Objetos ----------------------------------------------------
 
-class Animal:
+class Animal: # Clase
     def __init__(self, nombre, edad, especie):
         self.nombre = nombre
         self.edad = edad
         self.especie = especie
         
-    def mostrar_info(self):
-        print(f"Nombre: {self.nombre}, Edad: {self.edad}, Especie: {self.especie}", end=", ")
-
-class Perro(Animal):
-    def __init__(self, nombre, edad, especie, duenio):
-        super().__init__(nombre, edad, especie)
-        self.duenio = duenio
-    
-    def mostrar_info(self):
-        super().mostrar_info()
-        print(f"Dueño: {self.duenio}")
-    
     def hablar(self):
-        print("Guau guau!")
-
-class Leon(Animal):
-    def __init__(self, nombre, edad, especie, reserva):
-        super().__init__(nombre, edad, especie)
-        self.reserva = reserva
+        print("Hola!!!")
         
-    def mostrar_info(self):
-        super().mostrar_info()
-        print(f"Reserva: {self.reserva}")
+    def moverse(seff):
+        print("Estoy moviendome!")
+    
+perro = Animal("dogui", 3, "perro")      # Instancias de la clase: objetos
+gato = Animal("michifus", 4, "gato")
+pajaro = Animal("caniggia", 56, "ave")
+
+print(perro.nombre)   # Atributos
+print(gato.edad)
+print(pajaro.especie) 
+
+perro.hablar() # Métodos
+gato.moverse()
+pajaro.moverse()
+
+### Herencia ------------------------------------------------------
+
+class Persona: # Clase
+    def __init__(self, nombre, edad): # Constructor
+        self.nombre = nombre
+        self.edad = edad
     
     def hablar(self):
-        print("Hola a todos, yo soy el león!")
+        print("Buenas tardes!")
+        
+    def presentarse(self):
+        print(f"Hola me llamo {self.nombre}, tengo {self.edad} años")
 
-perro = Perro("Dogui",3,"Canino","Juan Carlos")
-leon = Leon("Robert",8,"Felino","Sahara")
+class Alumno(Persona):
+    def __init__(self, nombre, edad, carrera):
+        super().__init__(nombre, edad)
+        self.carrera = carrera
+    
+    def mostrar_datos(self):
+        print(f"Hola me llamo {self.nombre}, tengo {self.edad} años y curso la carrera {self.carrera}")
 
-perro.mostrar_info()
-perro.hablar()
+# class Docente
 
-leon.mostrar_info()
-leon.hablar()
+alumno = Alumno("Lionel", 38, "Ing. Sistemas")
+alumno.mostrar_datos()
 
-# print(Perro.__bases__)
-# print(Leon.__mro__)
 
-def suma(a,b):
-    return a + b
 
-calculo = suma(5,6) * 2
-print(calculo)
+
+
+
+
+
+
+
+
+
+
 
