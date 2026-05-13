@@ -9,7 +9,7 @@ class Animal: # Clase
     def hablar(self):
         print("Hola!!!")
         
-    def moverse(seff):
+    def moverse(self):
         print("Estoy moviendome!")
     
 perro = Animal("dogui", 3, "perro")      # Instancias de la clase: objetos
@@ -34,8 +34,9 @@ class Persona: # Clase
     def hablar(self):
         print("Buenas tardes!")
         
-    def presentarse(self):
+    def mostrar(self):
         print(f"Hola me llamo {self.nombre}, tengo {self.edad} años")
+
 
 class Alumno(Persona):
     def __init__(self, nombre, edad, carrera):
@@ -43,23 +44,22 @@ class Alumno(Persona):
         self.carrera = carrera
     
     def mostrar_datos(self):
-        print(f"Hola me llamo {self.nombre}, tengo {self.edad} años y curso la carrera {self.carrera}")
+        super().mostrar()
+        print(f"y curso la carrera {self.carrera}")
 
-# class Docente
+
+class Docente(Persona):
+    def __init__(self, nombre, edad, materia):
+        super().__init__(nombre, edad)
+        self.materia = materia
+
+    def mostrar_datos(self):
+        super().mostrar()
+        print(f"y dicto la materia {self.materia}")
+
 
 alumno = Alumno("Lionel", 38, "Ing. Sistemas")
 alumno.mostrar_datos()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+docente = Docente("Pablo", 46, "Paradigmas de Programación")
+docente.mostrar_datos()
